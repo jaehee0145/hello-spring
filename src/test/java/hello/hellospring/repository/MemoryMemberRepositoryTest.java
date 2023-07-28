@@ -18,17 +18,26 @@ class MemoryMemberRepositoryTest {
         // given
         Member member = new Member();
         member.setName("m1");
+
+        // when
         Member member1 = repository.save(member);
+
+        // then
         boolean equals = member1.equals(member);
         System.out.println("equals: " + equals);
     }
 
     @Test
     void findById() {
+        // given
         Member member = new Member();
         member.setName("m1");
         repository.save(member);
+
+        // when
         Member member1 = repository.findById(member.getId()).get();
+
+        //then
         boolean equals = member1.equals(member);
         System.out.println("equals: " + equals);
     }
