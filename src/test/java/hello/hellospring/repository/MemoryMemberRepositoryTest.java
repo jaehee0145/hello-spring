@@ -41,4 +41,21 @@ class MemoryMemberRepositoryTest {
         boolean equals = member1.equals(member);
         System.out.println("equals: " + equals);
     }
+
+    @Test
+    void findByName() {
+        // given
+        final Member member = new Member();
+        member.setName("m2");
+        repository.save(member);
+        System.out.println(member);
+
+        // when
+        Member member2 = repository.findByName("m2").get();
+
+        //then
+        boolean equals = member2.equals(member);
+        System.out.println("equals: " + equals);
+    }
+
 }
