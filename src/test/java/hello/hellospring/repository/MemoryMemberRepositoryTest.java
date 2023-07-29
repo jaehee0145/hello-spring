@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
@@ -26,7 +28,7 @@ class MemoryMemberRepositoryTest {
         Member member1 = repository.save(member);
 
         // then
-        Assertions.assertEquals(member1, member);
+        assertEquals(member1, member);
     }
 
     @Test
@@ -40,7 +42,7 @@ class MemoryMemberRepositoryTest {
         Member member1 = repository.findById(member.getId()).get();
 
         //then
-        Assertions.assertEquals(member1, member);
+        assertEquals(member1, member);
     }
 
     @Test
@@ -55,7 +57,7 @@ class MemoryMemberRepositoryTest {
         Member member2 = repository.findByName("m2").get();
 
         //then
-        Assertions.assertEquals(member2, member);
+        assertEquals(member2, member);
     }
 
     @Test
@@ -73,6 +75,6 @@ class MemoryMemberRepositoryTest {
         final List<Member> members = repository.findAll();
 
         // then
-        Assertions.assertEquals(members.size(), 2);
+        assertEquals(members.size(), 2);
     }
 }
