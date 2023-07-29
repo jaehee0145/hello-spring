@@ -129,6 +129,16 @@ TDD
 - repository : DB에 대한 단순한 작업
 - service: 비즈니스 로직 포함 (ex. 회원 이름으로 중복 체크)
 
+### 5. 회원 서비스 테스트 
+- cmd shift T : 테스트 생성 단축키 
+- 테스트 이름은 한글로 작성해도 괜찮다
+- 테스트는 정상보다 예외가 더 중요
+
+- @BeforeEach 
+
+opt command / 주석
+
+
 
 
 
