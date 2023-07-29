@@ -73,6 +73,7 @@ class MemoryMemberRepositoryTest {
 
         // when
         final List<Member> members = repository.findAll();
+
         // then
         final boolean equals = members.size() == 2;
         System.out.println("equals: " + equals);
