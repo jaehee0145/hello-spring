@@ -4,6 +4,8 @@ import hello.hellospring.domain.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
@@ -58,4 +60,21 @@ class MemoryMemberRepositoryTest {
         System.out.println("equals: " + equals);
     }
 
+    @Test
+    void findAll() {
+        // given
+        final Member member1 = new Member();
+        member1.setName("m1");
+        repository.save(member1);
+
+        final Member member2 = new Member();
+        member2.setName("m2");
+        repository.save(member2);
+
+        // when
+        final List<Member> members = repository.findAll();
+        // then
+        final boolean equals = members.size() == 2;
+        System.out.println("equals: " + equals);
+    }
 }
